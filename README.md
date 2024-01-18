@@ -9,6 +9,29 @@ The main components of a DCF calculation include:
 - **Terminal Value**: The value of the company after the forecast period.
 - **Discount Rate**: The rate used to 'discount' future cash flows back to the present value, reflecting the opportunity cost and time value of money.
 
+## Initial Parameters
+
+The script uses several initial parameters to calculate the DCF:
+
+- **initial_fcf (Initial Free Cash Flow)**: This is the starting value of the company's annual free cash flow.
+- **growth_rate_10_years (Growth Rate for the First 10 Years)**: The annual growth rate expected for the company's free cash flow during the first 10 years.
+- **growth_rate_terminal (Terminal Growth Rate)**: The rate at which the company's free cash flow is expected to grow indefinitely after the first 10 years.
+- **discount_rate (Discount Rate)**: The rate used to discount future cash flows to their present values.
+- **years (Forecast Period)**: The number of years for which the cash flows are explicitly calculated (usually 10 years).
+- **share_count (Number of Shares)**: The total number of outstanding shares of the company.
+
+## Script Overview
+
+At a high level, the script performs the following steps to calculate the intrinsic value per share:
+
+1. **Calculate Cash Flows**: It forecasts the future cash flows of the company for a specified number of years based on the initial free cash flow and the growth rate.
+2. **Calculate Terminal Value**: It calculates the terminal value of the company, which is the value of all future cash flows beyond the forecast period, at the end of the specified number of years.
+3. **Discount Cash Flows**: It then discounts these future cash flows, including the terminal value, back to their present value using the discount rate.
+4. **Calculate Intrinsic Value**: It sums up the present values of the forecasted cash flows and the present value of the terminal value to derive the total intrinsic value of the company.
+5. **Determine Intrinsic Value Per Share**: Finally, it divides the total intrinsic value by the number of shares to find the intrinsic value per share.
+
+The result is the estimated intrinsic value per share of the company.
+
 ## How to Run the Script
 
 To run this script, ensure you have Python installed on your machine and open your terminal or command prompt, navigate to the repository where the script is located, and run the script using Python by typing:
